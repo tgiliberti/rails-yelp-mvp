@@ -22,5 +22,34 @@
 </div>
 
 <div>
-  <%= link_to "Back to Restaurants", restaurants_path, class: "btn btn-primary" %>
+  <h2>Reviews</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Content</th>
+        <th scope="col">Rating(1-5)</th>
+      </tr>
+    </thead>
+    <% @reviews.each do |review| %>
+
+    <tbody>
+      <tr>
+        <td>
+          <%= review.content %>
+        </td>
+        <td>
+          <%= review.rating %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+
+  </table>
+
+</div>
+
+<div>
+  <%= link_to "Back to Restaurants", restaurants_path, class: "btn btn-default" %>
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
 </div>
