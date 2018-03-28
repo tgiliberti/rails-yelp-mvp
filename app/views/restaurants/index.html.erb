@@ -1,0 +1,44 @@
+<h1>Restaurants</h1>
+
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Category</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+
+    <% @restaurants.each do |restaurant| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= restaurant.name %>
+        </td>
+
+        <td>
+          <%= restaurant.address %>
+        </td>
+
+        <td>
+          <%= restaurant.category %>
+        </td>
+        <td>
+          <p><%= link_to "Show", restaurant_path(restaurant) %></p>
+<!--      <p><%= link_to "Del", restaurant_path(restaurant) %></p>
+ -->
+
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>
+
+<div class="action-menu">
+  <p>
+    <%= link_to "New Restaurant", new_restaurant_path %>
+  </p>
+</div>
