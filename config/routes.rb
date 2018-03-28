@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+
+  get 'reviews/edit'
+
+  get 'reviews/new'
+
+  get 'reviews/show'
+
+  get 'reviews/destroy'
+
   resources :restaurants
   root 'restaurants#index'
 
